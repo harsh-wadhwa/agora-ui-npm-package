@@ -15,12 +15,13 @@ function LocalControls() {
         ...{
           backgroundColor: '#007bff',
           width: '100%',
-          height: 70,
+          height: 60,
           zIndex: 10,
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-evenly',
-          alignItems: 'center'
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 10
         },
         ...localBtnContainer
       }}
