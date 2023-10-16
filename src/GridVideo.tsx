@@ -21,6 +21,9 @@ const GridVideo: React.FC = () => {
   const [height, setHeight] = useState(window.innerHeight)
   const isLandscape = width > height
   const unit = 'minmax(0, 1fr) '
+  console.log(max)
+  console.log(min)
+  console.log(users)
 
   useEffect(() => {
     const handleResize = () => {

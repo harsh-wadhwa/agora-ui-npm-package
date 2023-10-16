@@ -19,6 +19,9 @@ const MaxVideoView = (props: {
   const renderModeProp = videoMode?.max
   const [isShown, setIsShown] = useState(false)
   const { user } = props
+  console.log(user)
+  console.log(rtcProps)
+  console.log(mediaStore)
 
   return (
     <div
@@ -82,14 +85,19 @@ const styles = {
     display: 'flex'
   } as CSSProperties,
   username: {
-    position: 'absolute',
-    background: '#007bffaa',
-    padding: '2px 8px',
+    background: '#000000aa',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     color: '#fff',
-    margin: 0,
-    bottom: 0,
+    zIndex: 90,
+    textAlign: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0,
     right: 0,
-    zIndex: 90
+    margin: '0 auto',
+    width: '125px',
   } as CSSProperties
 }
 

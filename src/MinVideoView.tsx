@@ -6,6 +6,7 @@ import RemoteAudioMute from './Controls/Remote/RemoteAudioMute'
 import SwapUser from './Controls/SwapUser'
 import PropsContext, { UIKitUser } from './PropsContext'
 import VideoPlaceholder from './VideoPlaceholder'
+import Username from './Username'
 
 /**
  * React context to expose user array displayed in the smaller view
@@ -22,7 +23,8 @@ const MinVideoView = (props: { user: UIKitUser }) => {
     <div
       style={{
         ...{ display: 'flex', flex: 1 },
-        ...minViewStyles
+        ...minViewStyles, 
+        position: 'relative'
       }}
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
@@ -66,6 +68,7 @@ const MinVideoView = (props: { user: UIKitUser }) => {
       ) : (
         <VideoPlaceholder user={user} isShown={isShown} showButtons showSwap />
       )}
+      {!rtcProps.disableRtm && <Username user={user} />}
     </div>
   )
 }
