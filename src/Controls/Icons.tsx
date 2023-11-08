@@ -56,6 +56,15 @@ const icons = {
       <line x1='18' y1='6' x2='6' y2='18' />
       <line x1='6' y1='6' x2='18' y2='18' />
     </React.Fragment>
+  ),
+  settings: (
+    <React.Fragment>
+      <circle cx='12' cy='12' r='3' />
+      <path d='M19.39 15a10 10 0 0 0-2.25-2.47' />
+      <path d='M4.61 15a10 10 0 0 0 2.25-2.47' />
+      <path d='M12 19.36V22a1.08 1.08 0 0 1-1-1' />
+      <path d='M12 4.64V2a1.08 1.08 0 0 1 1 1' />
+    </React.Fragment>
   )
 }
 

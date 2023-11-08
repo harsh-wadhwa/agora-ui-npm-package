@@ -4,6 +4,7 @@ import LocalAudioMute from './Local/LocalAudioMute'
 import Screenshare from './Local/Screenshare'
 import LocalVideoMute from './Local/LocalVideoMute'
 import PropsContext from '../PropsContext'
+import SettingsButton from './Local/SettingsButton'
 
 function LocalControls() {
   const { styleProps, rtcProps } = useContext(PropsContext)
@@ -32,6 +33,7 @@ function LocalControls() {
         <Screenshare />
       )}
       <EndCall />
+      <SettingsButton />
     </div>
   )
 }
