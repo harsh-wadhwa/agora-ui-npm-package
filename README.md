@@ -1,11 +1,9 @@
 # Agora React VideoUIKit - customized : Harsh Wadhwa
 
 > Instantly integrate Agora video calling or streaming into your web application using a React based VideoUIKit.
+> Starting this project to compensate where Agora's Video UI-Kit lags. This project implements changing media sources in video calls during and before a call is joined, UI fixes, using user pictures instead of bland icons and more.
 
 ## Getting started
-### Requirements
-- [An Agora developer account](https://sso.agora.io/en/signup?utm_source=github&utm_repo=Web-React-UIKit)
-- A React project
 
 ### Installation
 To a react application, add the following:
