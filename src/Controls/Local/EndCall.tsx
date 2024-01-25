@@ -11,7 +11,7 @@ function EndCall() {
 
   return (
     <BtnTemplate
-      style={endCall || { backgroundColor: '#ef5588', borderColor: '#f00' }}
+      style={endCall || { backgroundColor: '#eb5144', borderColor: '#fff' }}
       name='callEnd'
       onClick={() => callbacks?.EndCall && callbacks.EndCall()}
     />

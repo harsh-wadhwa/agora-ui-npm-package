@@ -118,7 +118,7 @@ export default function SettingsDialog(props: SimpleDialogProps) {
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>Settings</DialogTitle>
-      <DialogContent sx={{ minWidth: 400, maxWidth: 400 }}>
+      <DialogContent sx={{ minWidth: 350, maxWidth: 350 }}>
         <SelectMenuCamera />
         <SelectMenuMic />
       </DialogContent>

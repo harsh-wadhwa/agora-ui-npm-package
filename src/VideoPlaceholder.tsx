@@ -52,9 +52,12 @@ const style = {
   max: {
     flex: 1,
     display: 'flex',
-    backgroundColor: '#007bff33',
+    backgroundColor: '#272728',
     flexDirection: 'row',
-    position: 'relative'
+    position: 'relative',
+    border: '1px solid #FFF',
+    borderRadius: '15px',
+    overflow: 'hidden'
   } as React.CSSProperties,
   imgContainer: {
     flex: 10,

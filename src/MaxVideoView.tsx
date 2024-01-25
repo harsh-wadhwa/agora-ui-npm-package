@@ -19,9 +19,6 @@ const MaxVideoView = (props: {
   const renderModeProp = videoMode?.max
   const [isShown, setIsShown] = useState(false)
   const { user } = props
-  console.log(user)
-  console.log(rtcProps)
-  console.log(mediaStore)
 
   return (
     <div
@@ -76,7 +73,11 @@ const styles = {
   videoplayer: {
     width: '100%',
     display: 'flex',
-    flex: 1
+    flex: 1,
+    borderRadius: '15px',
+    border: '1px solid #FFF',
+    overflow: 'hidden',
+    margin: '1px'
   },
   overlay: {
     position: 'absolute',
@@ -93,11 +94,12 @@ const styles = {
     zIndex: 90,
     textAlign: 'center',
     position: 'absolute',
-    top: 0,
+    top: '1px',
     left: 0,
     right: 0,
     margin: '0 auto',
     width: '125px',
+    borderRadius: '3px'
   } as CSSProperties
 }
 
