@@ -12,7 +12,8 @@ import PropsContext, {
   UIKitUser,
   mediaStore,
   layout,
-  CallbacksInterface
+  CallbacksInterface,
+  ToggleState
 } from './PropsContext'
 import { MaxUidProvider } from './MaxUidContext'
 import AgoraRTC, { createClient, ILocalVideoTrack, UID } from 'agora-rtc-react'
@@ -349,6 +350,26 @@ const RtcConfigure: React.FC<PropsWithChildren<Partial<RtcPropsInterface>>> = (
       })
     }
   }, [rtcProps.channel, channelJoined])
+
+  // mark video as disabled if disabled
+  useEffect(() => {
+    if (channelJoined && !rtcProps.enableVideo) {
+      dispatch({
+        type: 'local-user-mute-video',
+        value: [ToggleState.disabled]
+      })
+    }
+  }, [channelJoined])
+
+  // mark audio as disabled if disabled
+  useEffect(() => {
+    if (channelJoined && !rtcProps.enableAudio) {
+      dispatch({
+        type: 'local-user-mute-audio',
+        value: [ToggleState.disabled]
+      })
+    }
+  }, [channelJoined])
 
   // renew token if token is updated
   useEffect(() => {

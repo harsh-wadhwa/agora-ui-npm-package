@@ -14,7 +14,9 @@ const useTracks = createMicrophoneAndCameraTracks(
 /**
  * React component that create local camera and microphone tracks and assigns them to the child components
  */
-const TracksConfigure: React.FC<PropsWithChildren<Partial<RtcPropsInterface>>> = (props) => {
+const TracksConfigure: React.FC<
+  PropsWithChildren<Partial<RtcPropsInterface>>
+> = (props) => {
   const [ready, setReady] = useState<boolean>(false)
   const [localVideoTrack, setLocalVideoTrack] =
     useState<ILocalVideoTrack | null>(null)
@@ -22,14 +24,25 @@ const TracksConfigure: React.FC<PropsWithChildren<Partial<RtcPropsInterface>>> =
     useState<ILocalAudioTrack | null>(null)
   const { ready: trackReady, tracks, error } = useTracks()
   const mediaStore = useRef<mediaStore>({})
+  const { enableAudio, enableVideo } = props
 
   useEffect(() => {
     if (tracks !== null) {
-      setLocalAudioTrack(tracks[0])
-      setLocalVideoTrack(tracks[1])
+      const audioTrack = tracks[0]
+      const videoTrack = tracks[1]
+
+      if (!enableAudio) {
+        audioTrack.setEnabled(false)
+      }
+      if (!enableVideo) {
+        videoTrack.setEnabled(false)
+      }
+
+      setLocalAudioTrack(audioTrack)
+      setLocalVideoTrack(videoTrack)
       mediaStore.current[0] = {
-        audioTrack: tracks[0],
-        videoTrack: tracks[1]
+        audioTrack: audioTrack,
+        videoTrack: videoTrack
       }
       setReady(true)
     } else if (error) {

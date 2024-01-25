@@ -24,7 +24,7 @@ const BtnTemplate = (props: BtnTemplateInterface) => {
           borderWidth: 2,
           borderStyle: 'solid',
           borderColor: '#fff',
-          backgroundColor: 'rgba(0,80,180,0.2)',
+          backgroundColor: getControlsButtonBackgroundColor(name),
           alignItems: 'center',
           justifyContent: 'center',
           display: 'flex',
@@ -64,3 +64,13 @@ const BtnTemplate = (props: BtnTemplateInterface) => {
 }
 
 export default BtnTemplate
+
+function getControlsButtonBackgroundColor(name: string): string {
+  if (name === 'videocamOff' || name === 'micOff') {
+    return '#eb5144'
+  } else if (name === 'screen' || name === 'stop') {
+    return '#0056b2'
+  } else {
+    return 'rgba(0,80,180,0.2)'
+  }
+}

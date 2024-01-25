@@ -35,7 +35,10 @@ const AgoraUIKit: React.FC<PropsInterface> = (props) => {
         {rtcProps.role === 'audience' ? (
           <VideocallUI />
         ) : (
-          <TracksConfigure>
+          <TracksConfigure
+            enableAudio={rtcProps.enableAudio}
+            enableVideo={rtcProps.enableVideo}
+          >
             <VideocallUI />
           </TracksConfigure>
         )}
@@ -70,7 +73,8 @@ const style = {
   display: 'flex',
   flex: 1,
   minHeight: 0,
-  flexDirection: 'column'
+  flexDirection: 'column',
+  background: '#000'
 } as React.CSSProperties
 
 export default AgoraUIKit

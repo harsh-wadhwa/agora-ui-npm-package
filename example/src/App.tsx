@@ -32,7 +32,9 @@ const App: React.FunctionComponent = () => {
                 token: null, // add your token if using app in secured mode
                 role: isHost ? 'host' : 'audience',
                 layout: isPinned ? layout.pin : layout.grid,
-                enableScreensharing: true
+                enableScreensharing: true,
+                enableAudio: false,
+                enableVideo: false
               }}
               rtmProps={{ username: username || 'user', displayUsername: true }}
               callbacks={{
