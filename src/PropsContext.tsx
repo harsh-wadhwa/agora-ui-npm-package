@@ -323,6 +323,14 @@ export interface RtcPropsInterface {
    * Disable Agora RTM, this also disables the use of usernames and remote mute functionality
    */
   disableRtm?: boolean
+  /**
+   * Preselected Camera Device Id
+   */
+  cameraDeviceId?: string
+  /**
+   * Preselected Microphone Device Id
+   */
+  microphoneDeviceId?: string
 }
 
 /**

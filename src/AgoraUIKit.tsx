@@ -38,6 +38,8 @@ const AgoraUIKit: React.FC<PropsInterface> = (props) => {
           <TracksConfigure
             enableAudio={rtcProps.enableAudio}
             enableVideo={rtcProps.enableVideo}
+            cameraDeviceId={rtcProps.cameraDeviceId}
+            microphoneDeviceId={rtcProps.microphoneDeviceId}
           >
             <VideocallUI />
           </TracksConfigure>

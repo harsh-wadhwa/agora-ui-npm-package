@@ -24,7 +24,7 @@ const TracksConfigure: React.FC<
     useState<ILocalAudioTrack | null>(null)
   const { ready: trackReady, tracks, error } = useTracks()
   const mediaStore = useRef<mediaStore>({})
-  const { enableAudio, enableVideo } = props
+  const { enableAudio, enableVideo, cameraDeviceId, microphoneDeviceId } = props
 
   useEffect(() => {
     if (tracks !== null) {
@@ -36,6 +36,12 @@ const TracksConfigure: React.FC<
       }
       if (!enableVideo) {
         videoTrack.setEnabled(false)
+      }
+      if (cameraDeviceId) {
+        videoTrack.setDevice(cameraDeviceId)
+      }
+      if (microphoneDeviceId) {
+        audioTrack.setDevice(microphoneDeviceId)
       }
 
       setLocalAudioTrack(audioTrack)
