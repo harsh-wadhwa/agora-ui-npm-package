@@ -22,9 +22,14 @@ function SelectMenuCamera() {
 
   useEffect(() => {
     async function setThingsUp() {
-      console.log(localVideoTrack)
       const cams = await AgoraRTC.getCameras()
       setAvailableCameraDevices([...cams])
+      const alreadySelectedDeviceId = cams?.find(
+        (item) => item.label === localVideoTrack?.getTrackLabel()
+      )?.deviceId
+      if (alreadySelectedDeviceId) {
+        setCameraDeviceId(alreadySelectedDeviceId)
+      }
     }
     setThingsUp()
   }, [])
@@ -37,12 +42,12 @@ function SelectMenuCamera() {
   return (
     <Box sx={{ marginTop: 5 }}>
       <FormControl fullWidth>
-        <InputLabel id='demo-simple-select-label'>Camera</InputLabel>
+        <InputLabel id='demo-simple-select-label'>Change Camera</InputLabel>
         <Select
           labelId='demo-simple-select-label'
           id='demo-simple-select'
           value={cameraDeviceId}
-          label='Camera'
+          label='Change Camera'
           onChange={handleChange}
         >
           {availableCameraDevices?.map((cam) => (
@@ -65,9 +70,14 @@ function SelectMenuMic() {
 
   useEffect(() => {
     async function setThingsUp() {
-      console.log(localAudioTrack)
       const mics = await AgoraRTC.getMicrophones()
       setAvailableMicrophoneDevices([...mics])
+      const alreadySelectedDeviceId = mics?.find(
+        (item) => item.label === localAudioTrack?.getTrackLabel()
+      )?.deviceId
+      if (alreadySelectedDeviceId) {
+        setMicDeviceId(alreadySelectedDeviceId)
+      }
     }
     setThingsUp()
   }, [])
@@ -82,12 +92,12 @@ function SelectMenuMic() {
   return (
     <Box sx={{ marginTop: 5 }}>
       <FormControl fullWidth>
-        <InputLabel id='demo-simple-select-label'>Microphone</InputLabel>
+        <InputLabel id='demo-simple-select-label'>Change Microphone</InputLabel>
         <Select
           labelId='demo-simple-select-label'
           id='demo-simple-select'
           value={micDeviceId}
-          label='Microphone'
+          label='Change Microphone'
           onChange={handleChange}
         >
           {availableMicrophoneDevices?.map((mic) => (

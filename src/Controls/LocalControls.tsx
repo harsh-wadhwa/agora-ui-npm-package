@@ -32,8 +32,8 @@ function LocalControls() {
       {rtcProps.role !== 'audience' && rtcProps.enableScreensharing && (
         <Screenshare />
       )}
-      <EndCall />
       <SettingsButton />
+      <EndCall />
     </div>
   )
 }

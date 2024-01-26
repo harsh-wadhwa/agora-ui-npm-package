@@ -519,6 +519,10 @@ export interface IconsInterface {
    * Icon to close the overlay in floating layout
    */
   close: string
+  /**
+   * Icon to close the overlay in floating layout
+   */
+  settings: string
 }
 
 const initialValue: PropsInterface = {
