@@ -1,23 +1,41 @@
-# Agora React VideoUIKit - customized : Harsh Wadhwa
+# Agora UIKit for React (Typescript): 
 
-> Instantly integrate Agora video calling or streaming into your web application using a React based VideoUIKit.
-> Starting this project to compensate where Agora's Video UI-Kit lags. This project implements changing media sources in video calls during and before a call is joined, UI fixes, using user pictures instead of bland icons and more.
+Harsh Wadhwa 
+https://github.com/harsh-wadhwa
 
-## Getting started
+> 3 Step Real Time Communication for React Applications (based on Agora's VideoSDK and RTM)
+> Improved upon agora-react-uikit offered by Agora Team 
+
+## Improvements over existing kit
+1. Layout and UI fixes. (✅)
+2. In call settings to change Audio Input devices and Video Input devices. (✅)
+3. Supported enableAudio and enableVideo props to pass to kit, before joining a call (✅)
+4. Supported cameraDevice(pass deviceId here) and microphoneDevice(pass deviceId here) props, before joining a call (✅)
+5. Supported : control which users of video call can mute others' video and audio. (✅)
+
+6. Change Audio Playback Device (Output) (...coming soon ⏲️) 
+7. Option to pass prop for User picture to be shown instead of placeholder when camera is off. (...coming soon ⏲️)
+
+### Supported New Props
+RTC : enableAudio, enableVideo, cameraDeviceId, microphoneDeviceId
+RTM : isThisUserAllowedToMuteOthers
 
 ### Installation
-To a react application, add the following:
+In your react application, run the following in a terminal: "npm i agora-custom-ui"
 
-```bash
-npm i agora-react-uikit
-```
+### Instructions for running the demo:
+1. Add your Agora App ID to `/example/src/App.tsx`
+2. Run `npm start` to start the bundler to build the library
+3. Execute `cd example && npm start` to run the example app
+
 
 ### Usage
 
+**Insert your Agora AppID and Token**.
+
 **A simple sample app integrating Agora UI Kit:**
-```jsx
 import React, {useState} from 'react';
-import AgoraUIKit from 'agora-react-uikit';
+import AgoraUIKit from 'agora-custom-ui';
 
 const App = () => {
   const [videoCall, setVideoCall] = useState(true);
@@ -39,11 +57,3 @@ const App = () => {
 };
 
 export default App;
-```
-
-**Insert your Agora AppID and Token**.
-
-### Instructions for running the demo:
-1. Add your Agora App ID to `/example/src/App.tsx`
-2. Run `npm start` to start the bundler to build the library
-3. Execute `cd example && npm start` to run the example app

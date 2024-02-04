@@ -1,6 +1,6 @@
 {
   "name": "agora-custom-ui",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "Agora UI Kit for React. Improved upon agora-react-uikit. More props and customizations.",
   "repository": {
     "type": "git",
