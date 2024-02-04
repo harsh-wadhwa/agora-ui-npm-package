@@ -111,7 +111,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderRadius: '5px'
   } as CSSProperties
 }
 

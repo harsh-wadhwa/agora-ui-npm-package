@@ -354,6 +354,10 @@ export interface RtmPropsInterface {
    */
   showPopUpBeforeRemoteMute?: boolean
   /**
+   * Whether the user is allowed to mute camera and microphone of other participants (default: true), if set to false you cannot unmute users.
+   */
+  isThisUserAllowedToMuteOthers?: boolean
+  /**
    * Display RTM usernames in the Videocall (default: false)
    */
   displayUsername?: boolean

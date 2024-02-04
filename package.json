@@ -1,7 +1,7 @@
 {
   "name": "agora-custom-ui",
   "version": "1.0.3",
-  "description": "Personal Project for custom agora ui kit. I do not suggest downloading and using this. This is completely based on Ekaansh Arora's agora react ui kit and will only contain modifications that I need personally.",
+  "description": "Agora UI Kit for React. Improved upon agora-react-uikit. More props and customizations.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harsh-wadhwa/agora-ui-npm-package.git"

@@ -123,7 +123,9 @@ const App: React.FunctionComponent = () => {
               }}
               rtmProps={{
                 username: username || 'user',
-                displayUsername: true
+                displayUsername: true,
+                showPopUpBeforeRemoteMute: false,
+                isThisUserAllowedToMuteOthers: true
               }}
               callbacks={{
                 EndCall: () => setVideocall(false)
