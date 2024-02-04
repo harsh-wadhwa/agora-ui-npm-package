@@ -23,7 +23,7 @@ const MinVideoView = (props: { user: UIKitUser }) => {
     <div
       style={{
         ...{ display: 'flex', flex: 1 },
-        ...minViewStyles, 
+        ...minViewStyles,
         position: 'relative'
       }}
       onMouseEnter={() => setIsShown(true)}
@@ -40,7 +40,14 @@ const MinVideoView = (props: { user: UIKitUser }) => {
           }}
         >
           <AgoraVideoPlayer
-            style={{ flex: 10, display: 'flex' }}
+            style={{
+              flex: 10,
+              display: 'flex',
+              borderRadius: '15px',
+              border: '1px solid #FFF',
+              overflow: 'hidden',
+              margin: '1px'
+            }}
             config={{
               fit: renderModeProp !== undefined ? renderModeProp : 'cover'
             }}

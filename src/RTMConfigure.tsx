@@ -212,6 +212,7 @@ const RtmConfigure = (props: any) => {
 
   const sendMuteRequest = (device: mutingDevice, rtcId: UID, mute: boolean) => {
     const forced = rtmProps?.showPopUpBeforeRemoteMute === false
+    const allowedToMute = rtmProps?.isThisUserAllowedToMuteOthers === true
     const payload: muteRequest = {
       messageType: 'MuteRequest',
       device,
@@ -222,6 +223,8 @@ const RtmConfigure = (props: any) => {
     const peerId = uidMap[rtcId]
     if (forced && !mute) {
       console.log('cannot send force unmute request')
+    } else if (!allowedToMute) {
+      console.log('not allowed to mute others')
     } else if (peerId) {
       sendPeerMessage(payload, peerId)
     } else {
