@@ -25,7 +25,7 @@ import {
   stopScreenshare
 } from './Controls/Local/screenshareFunctions'
 
-const useClient = createClient({ codec: 'vp8', mode: 'live' }) // pass in another client if use h264
+const useClient = createClient({ codec: 'h264', mode: 'rtc' }) // pass in another client if use h264
 
 /**
  * React component that contains the RTC logic. It manages the user state and provides it the children components by wrapping them with context providers.
@@ -248,9 +248,9 @@ const RtcConfigure: React.FC<PropsWithChildren<Partial<RtcPropsInterface>>> = (
       const { tokenUrl, channel, uid: userUid, appId, token } = rtcProps
       if (client && !ignore) {
         if (rtcProps.role === 'audience') {
-          client.setClientRole(rtcProps.role)
+          // client.setClientRole(rtcProps.role)
         } else {
-          client.setClientRole('host')
+          // client.setClientRole('host')
         }
         if (tokenUrl) {
           try {
@@ -383,9 +383,9 @@ const RtcConfigure: React.FC<PropsWithChildren<Partial<RtcPropsInterface>>> = (
   // set role if role is updated
   useEffect(() => {
     if (rtcProps.role) {
-      client
-        .setClientRole(rtcProps.role)
-        .then((e) => console.log('changed role', e))
+      // client
+      //   .setClientRole(rtcProps.role)
+      //   .then((e) => console.log('changed role', e))
     }
   }, [rtcProps.role, channelJoined])
 
