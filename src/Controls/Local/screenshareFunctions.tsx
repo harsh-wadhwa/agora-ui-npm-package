@@ -10,9 +10,9 @@ const startScreenshare = async (
   enableDualStream?: boolean
 ) => {
   const screenClient = AgoraRTC.createClient({
-    mode: 'live',
+    mode: 'rtc',
     role: 'host',
-    codec: 'vp8'
+    codec: 'h264'
   })
   let returnedUid: UID = 0
 
@@ -54,7 +54,7 @@ const startScreenshare = async (
   }
 
   async function join(): Promise<void> {
-    screenClient.setClientRole('host')
+    // screenClient.setClientRole('host')
 
     if (tokenUrl) {
       try {
