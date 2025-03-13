@@ -1,5 +1,8 @@
 # Agora UIKit for React (Typescript): 
 
+Harsh Wadhwa 
+https://github.com/harsh-wadhwa
+
 > 3 Step Real Time Communication for React Applications (based on Agora's VideoSDK and RTM)
 > Improved upon agora-react-uikit offered by Agora Team 
 
